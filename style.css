@@ -43,17 +43,13 @@ ul {
     gap: 30px;
 }
 
-@media (min-width: 425px) and (max-width:768px) {
+@media (max-width:768px) {
     .navbar {
         flex-direction: column;
     }
 }
 
-@media (min-width: 320px) and (max-width:425px) {
-    .navbar {
-        flex-direction: column;
-    }
-
+@media (max-width:425px) {
     .navbar ul {
         flex-direction: column;
     }
@@ -71,9 +67,9 @@ ul {
 
 }
 
-.navbar a:hover {
-    background-color: rgb(185, 0, 0);
-    transition-delay: 280ms;
+.navbar .btn:hover {
+    background-color: #961B21;
+    transition: 0.3s;
     border-radius: 30px;
 
 }
@@ -93,7 +89,7 @@ ul {
 
 }
 
-@media (min-width: 425px) and (max-width:768px) {
+@media (max-width:768px) {
     .one h1 {
         font-size: 4rem;
         font-weight: bold;
@@ -101,7 +97,7 @@ ul {
     }
 }
 
-@media (min-width: 320px) and (max-width:425px) {
+@media (max-width:425px) {
     .one h1 {
         margin: 2rem 0 0;
         font-size: 2rem;
@@ -115,7 +111,7 @@ ul {
     color: white;
 }
 
-@media (min-width: 425px) and (max-width:768px) {
+@media (max-width:768px) {
     .one h4 {
         font-size: 1.5rem;
         font-weight: bold;
@@ -123,7 +119,7 @@ ul {
     }
 }
 
-@media (min-width: 320px) and (max-width:425px) {
+@media (max-width:425px) {
     .one h4 {
         font-size: 0.8rem;
         font-weight: bold;
@@ -140,10 +136,8 @@ ul {
     align-items: center;
 }
 
-@media (min-width: 320px) and (max-width:425px) {
+@media (max-width:425px) {
     .one {
-        display: flex;
-        flex-direction: column;
         justify-content: flex-start;
         align-items: center;
 
@@ -157,8 +151,14 @@ ul {
     margin: 30px 0 0;
 }
 
+.one .btn-main:hover{
+    transition: 0.3s;
+    background-color: #83171a;
 
-@media (min-width: 320px) and (max-width:425px) {
+}
+
+
+@media (max-width:425px) {
     .one .btn-main {
         font-size: 0.8rem;
         border-radius: 10px;
@@ -211,11 +211,6 @@ ul {
     }
 }
 
-@media (max-width: 480px) {
-    .two .infos-together {
-        flex-direction: column-reverse;
-    }
-}
 
 
 
@@ -252,34 +247,71 @@ ul {
     margin: 20px 0 0;
     width: 100%;
     gap: 2px;
+    position: relative;
+    /* Protumaci bolje relative absolute */
+}
+
+.prices:hover{
+    border-bottom: 2px dashed #FF0011;
+    transition: 0.1s;
+    
+}
+.currency{
+    color:#FF0011; 
+    position: absolute;
+    right: 0;
+    transition: 1s;
+}
+.currency:hover{
+    letter-spacing: 2px;
+    transition: 0.3s;
 }
 
 /* Section four */
 .four {
+    
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-
+    grid-template-columns: repeat(4,1fr);
+    /* width: min(90%,75em);
+    grid-auto-flow: row; */
     /* grid-template-areas: 
         "galerija1 galerija2 galerija3 galerija4"
         "galerija5 galerija6 galerija7 galerija8"
         "galerija9 galerija10 galerija11 galerija12"; */
     margin: 6rem 0 0;
     gap: 0;
+    overflow: hidden;
+    
 }
 
 .four img {
+    
     object-fit: cover;
     width: 100%;
     height: 100%;
+    max-width: 400px;
+    max-height: 200px;
+    overflow: hidden;
+    
+    
 }
 
-@media (min-width: 2560px) {
+
+
+.four img:hover{
+    transform: scale(1.1);
+    z-index: 1;
+    transition: 0.3s;
+}
+
+
+
+/* @media (min-width: 2560px) {
     .four img {
         max-width: 700px;
         max-height: 400px;
     }
-}
+} */
 
 
 /* Five */
@@ -349,7 +381,7 @@ ul {
 }
 
 .btn {
-    background-color: rgb(185, 0, 0);
+    background-color: #BF2026;
     color: white;
     border-radius: 30px;
     padding: 8px 8px;
